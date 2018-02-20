@@ -1,4 +1,6 @@
-
+/*
+ * TC: O()
+ */
 public class Divide {
 
 	public static void main(String[] args) {
@@ -11,7 +13,7 @@ public class Divide {
 		  int sign=1;
 	        if((dividend<0 && divisor>0) || (dividend>0 && divisor<0) ) sign=-1;
 	       long dividend1=Math.abs((long)dividend);
-	       System.out.print("here"+dividend1);
+	       System.out.print("here: " + dividend1);
 	        long divisor1=Math.abs((long) divisor);
 	        System.out.println(divisor1);
 	        while(dividend1>=0)
