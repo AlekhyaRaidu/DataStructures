@@ -1,4 +1,5 @@
 // Given a sorted array of infinite length, how would you find a certain value?  
+//TC O(logn)
 public class Infinitelen_FindPos {
 	public static void main(String[] args)
 	{
