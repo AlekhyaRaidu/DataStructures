@@ -6,7 +6,8 @@ public class Divide {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Divide d=new Divide();
-		System.out.print(d.divide(-2147483648,1));
+		
+	//	System.out.print(d.divide(-2147483648,1));
 	}
 	 public int divide(int dividend, int divisor) {
 		 long count=0;
@@ -26,5 +27,8 @@ public class Divide {
 	        long res= (sign) *count;
 	        return (int) ((res>Integer.MAX_VALUE)? Integer.MAX_VALUE:res);
 	    }
+	 
+	
+	
 
 }
