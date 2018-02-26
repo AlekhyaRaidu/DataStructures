@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -23,5 +24,33 @@ import java.util.PriorityQueue;
 	         //      return o1.val-o2.val;
 	         //   } 
 		// });
+//array sort comparator:
+Arrays.sort(words, new Comparator<Word>() {
+    public int compare(Word o1, Word o2) {
+        // Intentional: Reverse order for this demo
+        return o1.val.compareTo(o2.val);
+    }
+});
 // to retrieve value from set
 	//for(Character c:set)
+//0r
+// Iterator<String> it = hset.iterator();
+//while(it.hasNext()){
+  //  System.out.println(it.next());
+//Iterate over map
+//iterator()-> start of iteration.
+//next() returns next elemnt
+Map.entrySet() method returns a collection-view(Set<Map.Entry<K, V>>) of the mappings 
+contained in this map. So we can iterate over key-value pair using getKey() and
+getValue() methods of Map.Entry<K, V>
+
+//str.lastIndexOf(ch) It returns the last occurrence of character ch in the particular String.
+
+// to convert int to char
+	// int j=9;
+	// int i=(char)(j+'0');
+
+//to convert integer to string
+	//int j=12;
+	// String.valueOf(j); --converts to string
+	// String.valueOf(j).toCharArray(); -- converts to char array

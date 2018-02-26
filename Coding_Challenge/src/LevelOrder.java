@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+import java.util.Stack;
 class TreeNode4 {
       int val;
       TreeNode4 left;
@@ -13,6 +14,11 @@ public class LevelOrder {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+String str="Alek is a coder";
+str.trim();
+String[] arr=str.split(" ");
+System.out.println(str+" "+arr[0]+" "+arr[1]);
+System.out.print(arr[2]+" "+arr[3]);
 
 	}
 	List<List<Integer>> blist=new ArrayList<List<Integer>>();
@@ -21,6 +27,7 @@ public class LevelOrder {
 		 Queue<TreeNode> q=new LinkedList<TreeNode>();
 		 q.add(root);
 		 List<Integer> slist=new ArrayList<Integer>();
+		 
 		 while(!q.isEmpty())
 		 {
             slist=new ArrayList<Integer>();

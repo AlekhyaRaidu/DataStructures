@@ -11,38 +11,37 @@ public class CloneLL {
 	}
 	  public RandomListNode copyRandomList(RandomListNode head) {
 		  if(head==null) return null;
-		  RandomListNode root = null,prev=null,orghead=head,dummy=root,newhead=null,newdummy=newhead;
-		  while(head!=null)
-		  {
-			  root=head;
-			  if(prev!=null) prev.next=root;
-			  prev=root;
-			  root=root.next;
-			  head=head.next;
+		// Insert dup nades in org list
+		  RandomListNode node=head,nwnode,duphead,dup;
+		// lood utnil node!=null
+		  while(node!=null) {
+			  nwnode=new RandomListNode(node.label);
+			  nwnode.next=node.next;
+			  node.next=nwnode;
+			  node=nwnode.next;
+			  
 		  }
-		  head=orghead;
-		  root=dummy;
-		  while(newhead!=null)
+		 // set random pointers
+		  node=head;
+		  while(node!=null)
 		  {
-			  newhead=head;
-			  newhead=newhead.next;
-			  head=head.next;
+			  if(node.random!=null) node.next.random=node.random.next;
+              else node.next.random=node.random;
+			  node=node.next.next;
 		  }
-		  while(head!=null)
+		  node=head;
+		  duphead=node.next;
+		 //detach dup list from org list
+		  while(node!=null)
 		  {
-			  prev=head.next;
-			  head.next=root;
-			  root=root.next;
-			  head=prev;
+			  dup=node.next;
+			  node.next=dup.next;
+			  if(node.next!=null)dup.next=node.next.next;
+			  else dup.next=null;
+			  node=node.next;
 		  }
-		  head=orghead;
-		  root=dummy;
-		  while(root!=null)
-		  {
-			  root.random=head.random.next;
-			  root=root.next;
-		  }
-		  
+		 
+		  return duphead;
 		 
 	    }
 	
