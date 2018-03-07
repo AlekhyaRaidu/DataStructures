@@ -6,44 +6,58 @@ import java.util.List;
 // so on
 
 public class Permutation {
+	
 	static List<String> slist=new ArrayList<String>();
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		// TODO Auto-generated method stub
-Permutation p=new Permutation();
-int[] nums= {1,2,3};
-p.permute(nums, 0);
-System.out.print(blist.get(0));
-System.out.print(blist.get(1));
-System.out.print(blist.get(2));
-System.out.print(blist.get(3));
-System.out.print(blist.get(4));
-System.out.print(blist.get(0));
+			Permutation p=new Permutation();
+			int[] nums= {1,2,3};
+			 List<List<Integer>> blist=new ArrayList<List<Integer>>();
+			blist=p.permute(nums);
+			System.out.print(blist.get(0));
+			System.out.print(blist.get(1));
+			System.out.print(blist.get(2));
+			System.out.print(blist.get(3));
+			System.out.print(blist.get(4));
+			System.out.print(blist.get(5));
 	}
+	 public List<List<Integer>> permute(int[] nums) {
+		  List<List<Integer>> blist=new ArrayList<List<Integer>>();
+		  if(nums.length==0 || nums==null) return blist;
+		  List<Integer> smlist=new ArrayList<Integer>();
+		  for(int i:nums)
+			  smlist.add(i);
+		  blist=permute(smlist,0,blist);
+		  return blist;
+	    }
+	 public List<List<Integer>> permute(List<Integer> smlist,int index, List<List<Integer>> blist)
+	 {
+		 if(index==smlist.size())
+		 {		 
+			 blist.add(new ArrayList<Integer>(smlist));
+			 return blist; 
+		 }
+		 for(int i=index;i<smlist.size();i++)
+		 {
+			smlist= swap(smlist,index,i);
+			System.out.println(smlist+" "+i+" before");
+			blist=permute(smlist,index+1,blist);
+			smlist=swap(smlist,i,index);
+			System.out.println(smlist+" "+i+"after");
+		 }
+		 return blist;
+	 }
+	 public List<Integer> swap(List<Integer> slist,int i,int j)
+	 {
+		 System.out.println(slist+" "+i+" "+j+"swap");
+		 int temp=slist.get(i);
+		 slist.set(i, slist.get(j));
+		 slist.set(j, temp);
+		 return slist;
+	 }
 	
 
-	static List<Integer> blist=new ArrayList<Integer>();
-	static List<List<Integer>> biglist=new ArrayList<List<Integer>>();
-	private void permute(int[] nums, int l,List<Integer> blist)
-    {
-        if (l == nums.length)
-            biglist.add(blist);
-        else
-        {
-            for (int i = l; i <nums.length; i++)
-            
-            	nums = swap(nums,l,i);
-                permute(nums, l+1,blist);
-                nums = swap(nums,l,i);
-            }
-        }
-    }
-	 public int[] swap(int[] nums,int i,int j)
-	 {
-		 int temp=nums[i];
-		 nums[i]=nums[j];
-		 nums[j]=temp;
-		 return nums;
-		 
-	 }
+	
 
 }
