@@ -1,5 +1,5 @@
 
-
+// 
 public class LongestIncraesingSub {
 	public static void main(String[] args) {
 		int[] A = { 3,2,1 };

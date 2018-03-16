@@ -54,3 +54,16 @@ getValue() methods of Map.Entry<K, V>
 	//int j=12;
 	// String.valueOf(j); --converts to string
 	// String.valueOf(j).toCharArray(); -- converts to char array
+
+//ASCII equivalents
+//int  s= (int)('a');  ascii equivalent of character
+//char  s= (char)(97);
+// converting nnumber to char 
+//int a = 1;
+//char b = (char)(a + '0'); o/p: 1
+/
+// convert char array to string
+// char[] word = s.toCharArray();
+	// return new String(word);
+//Integer.parseInt(String) wittl convert string to int.  "18" to 18.
+

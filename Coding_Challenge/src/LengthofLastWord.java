@@ -12,7 +12,7 @@ public class LengthofLastWord {
 	}
 	 public int lengthOfLastWord(String s) {
 	      //  String[] arr=s.split(" ");
-	       System.out.print( s.trim().length()-(s.trim().lastIndexOf(" ")+1));
+	       System.out.print( s.trim().length()-(s.trim().lastIndexOf(' ')+1));
 	       return 0;
 	    }
 }

@@ -7,7 +7,7 @@ public class MissingParanthesis {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		MissingParanthesis m=new MissingParanthesis();
-		String str="()()))((";
+		String str="))()";
 		m.checkingParanthesis(str);
 
 	}

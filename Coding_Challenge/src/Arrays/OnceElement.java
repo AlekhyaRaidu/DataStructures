@@ -1,4 +1,5 @@
 //Find the element that appears once in a sorted array where all other elements appear twice one after another. Find that element in 0(logn) complexity.
+// if array sorted try using binarty serach
 package Arrays;
 
 public class OnceElement {

@@ -6,28 +6,26 @@ public class CombAddUptoN1 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		CombAddUptoN1 c=new CombAddUptoN1();
-		System.out.print(c.findingCombinations(0));
+		c.findingCombinations(5,0,new int[5],5);
 
 	}
-	public List<List<Integer>> findingCombinations(int n)
+	
+	public  void findingCombinations(int n,int index,int[] arr,int reducednumber)
 	{
-		List<List<Integer>> blist=new ArrayList<List<Integer>>();
-		List<Integer> slist=new ArrayList<Integer>();
-		if(n<=0) return blist;
-		for(int i=0;i<n;i++)
-			slist.add(1);
-		blist.add(slist);
-		while(blist.size()<n)
+		if(reducednumber<0) return;
+		if(reducednumber==0)
 		{
-			List<Integer> sslist= new  ArrayList<Integer>(blist.get(blist.size()-1));
-			//sslist=blist.get(blist.size()-1);
-			int size=sslist.size();
-			sslist.set(size-2,sslist.get(size-2)+sslist.get(size-1));
-			sslist.remove(size-1);
-			blist.add(sslist);
+			for(int i=0;i<index;i++)
+				System.out.print(arr[i]);
+			System.out.println();
+			return;
 		}
-		return blist;
-		
+		int prev=(index==0)?1:arr[index-1];
+		for (int k=prev;k<n;k++)
+		{
+			arr[index]=k;
+			findingCombinations(n,index+1,arr,reducednumber-k);
+		}
 	}
 
 }

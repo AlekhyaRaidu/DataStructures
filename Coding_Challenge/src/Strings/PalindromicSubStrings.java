@@ -1,3 +1,4 @@
+// max avoid storing res in DS...return dirctly as below
 package Strings;
 
 import java.util.HashSet;
@@ -37,5 +38,37 @@ public class PalindromicSubStrings {
 		}
 		return set;
 	}
+//	____________________________________________________
+	// for printing longest palidrome substring
+	 public String longestPalindrome(String s) {
+	        int len=1,end=0;
+			boolean[][] dp=new boolean[s.length()][s.length()];
+	        int maxlen=0,startpt=0;
+	    
+	        if(s==null || s.length()==0) return "";
+			while(len<=s.length())
+			{
+				for(int start=0;start<=s.length()-len;start++)
+				{
+					end=start+len-1;
+					if(s.charAt(start)==s.charAt(end))
+					{
+						if((start+1)>(end-1) || dp[start+1][end-1])
+							{
+                         dp[start][end]=true; 
+							    if(len>maxlen)
+	                                { startpt=start; maxlen=len;}
+							
+	                        }
+				    }
+				}
+             len++;
+     }
+			return s.substring(startpt,startpt+maxlen);
+	    }
+	
+	
+	
+	
 
 }

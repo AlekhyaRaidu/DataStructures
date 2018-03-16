@@ -6,44 +6,43 @@ public class CountandSay {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		CountandSay c=new CountandSay();
-		System.out.print(c.countAndSay(4));
+		c.countAndSay(4);
 	}
     public String countAndSay(int n) {
     	if(n<=0) return "";
-    	String res="1";
+    	StringBuilder sb=new StringBuilder();
+    	sb.append("1");
     	int i=1;
-    	if(n==1) return res;
     	while(i<n)
     	{
-    		System.out.println(res);
-    		res=scanning(res);
+    
+    		sb=scanning(sb);
     		i++;
-    		System.out.println(res+" "+i+" "+n);
+    		//System.out.println(sb+" "+i+" "+n);
     	}
-    	return res;
+    	return sb.toString();
     }
-    public String scanning(String str)
+    public StringBuilder  scanning(StringBuilder sb)
     {
-    	//if(str.length()==1) return str;
-    	System.out.println("scan"+str);
-    	StringBuilder sb=new StringBuilder();
+    	System.out.println(sb);
     	int count=1,i=1;
-    	while(i<str.length())
+    StringBuilder sb1=new StringBuilder();
+    	while(i<sb.length())
     	{
-    		if(str.charAt(i)!=str.charAt(i-1))
+    		if(sb.charAt(i)!=sb.charAt(i-1))
     		{
-    			sb.append(count);
-    	    	sb.append(str.charAt(i-1));
+    			sb1.append(count);
+    			sb1.append(sb.charAt(i-1));
     	    	count=1;
     		}
     		else count++;
     		i++;
     		
     	}
-    	sb.append(count);
-    	sb.append(str.charAt(i-1));
-    	System.out.println("strngbuilder"+sb);
-    	return sb.toString();
+    	sb1.append(count);
+    	sb1.append(sb.charAt(i-1));
+    	System.out.println("strngbuilder"+sb1);
+    	return sb1;
     	
     }
 

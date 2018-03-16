@@ -7,7 +7,7 @@ public class Divide {
 		// TODO Auto-generated method stub
 		Divide d=new Divide();
 		if(1==1.0) System.out.print("hey");
-	//	System.out.print(d.divide(-2147483648,1));
+		System.out.print(d.divide(-2147483648,1));
 	}
 	 public int divide(int dividend, int divisor) {
 		 long count=0;
@@ -17,14 +17,13 @@ public class Divide {
 	       System.out.print("here: " + dividend1);
 	        long divisor1=Math.abs((long) divisor);
 	        System.out.println(divisor1);
-	        while(dividend1>=0)
+	        while(dividend1>=divisor)
 	        {
 	        	dividend1-=divisor1;
-	        	if(dividend1>=0)
 	        	count++;
 	        	
 	        }
-	        long res= (sign) *count;
+	        long res= count;
 	        return (int) ((res>Integer.MAX_VALUE)? Integer.MAX_VALUE:res);
 	    }
 	 

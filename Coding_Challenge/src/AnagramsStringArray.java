@@ -20,9 +20,10 @@ public class AnagramsStringArray {
 		Set<Integer> set=new LinkedHashSet<Integer>();
 		set.remove(1);
 		AnagramsStringArray a=new AnagramsStringArray();
-		Word w=new Word("dabc",0);
+		Word w=new Word("bca",0);
 		Word w1=new Word("abc",1);
-		Word[] words= {w,w1};
+		Word w2=new Word("abcd",2);
+		Word[] words= {w,w1,w2};
 		//Arrays.sort(words);
 		Arrays.sort(words, new Comparator<Word>() {
 		    public int compare(Word o1, Word o2) {
