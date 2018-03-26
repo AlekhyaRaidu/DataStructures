@@ -20,6 +20,7 @@ int rescount=0;
 			return false;
 			return true;
 	}
+	
 	public boolean Probe(int row,int col)
 	{
 		if(Moves(row,col)) 
