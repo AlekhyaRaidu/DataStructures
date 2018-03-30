@@ -1,5 +1,7 @@
 package Strings;
 
+
+
 public class RemoveSpaces {
 
 	public static void main(String[] args) {
@@ -14,17 +16,11 @@ public class RemoveSpaces {
 	}
 	public String removingSpaces(String str) {
 		if(str.length()==0 || str==null) return "";
-		//int index=0;
-		String res="";
-		for(int i=0;i<str.length();i++)
-		{
-			if(str.charAt(i)!=' ')
-			{
-				res=res+str.charAt(i);
-			}
-				
-		}
-		return res;
+		String[] starry=str.split(" ");
+		StringBuilder sb=new StringBuilder();
+		for(String word:starry)
+			sb.append(word);
+		return sb.toString();
 		
 	}
 }

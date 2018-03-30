@@ -13,8 +13,12 @@ public class TestCode {
 		sb.append('h');
 		sb.append("ale");
 		System.out.print(sb);
-		
-		
+		StringBuilder str = new StringBuilder("Tutorial");
+		str.insert(3, 'p');
+		System.out.println(str);
+		String s="a+b-c";
+		String[] sarr=s.split("[+-]");
+		System.out.print(sarr[0]+" "+sarr[1]+" "+sarr[2]);
 
 	}
 public int rob(int[] nums) {

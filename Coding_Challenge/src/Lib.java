@@ -67,3 +67,6 @@ getValue() methods of Map.Entry<K, V>
 	// return new String(word);
 //Integer.parseInt(String) wittl convert string to int.  "18" to 18.
 
+//string split on multiple chars
+//String s="a+b-c";
+//String[] sarr=s.split("[+-]");

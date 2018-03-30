@@ -12,6 +12,8 @@ public class Permutation {
 	{
 		// TODO Auto-generated method stub
 			Permutation p=new Permutation();
+			StringBuilder str=new StringBuilder("abc");
+			p.permutations(str, 0);
 			int[] nums= {1,2,3};
 			 List<List<Integer>> blist=new ArrayList<List<Integer>>();
 			blist=p.permute(nums);
@@ -21,6 +23,28 @@ public class Permutation {
 			System.out.print(blist.get(3));
 			System.out.print(blist.get(4));
 			System.out.print(blist.get(5));
+	}
+	public void permutations(StringBuilder str,int index)
+	{
+		if(index==str.length()) {
+			System.out.println(str);
+		}
+		for(int i=index;i<str.length();i++)
+		{
+			str=swap(str,index,i);
+			permutations(str,index+1);
+				str=swap(str,index,i);
+			
+		}
+	
+	}
+	public StringBuilder swap(StringBuilder str,int i,int j)
+	{
+		char temp=str.charAt(i);
+		str.setCharAt(i, str.charAt(j));
+		str.setCharAt(j, temp);
+		return str;
+		
 	}
 	 public List<List<Integer>> permute(int[] nums) {
 		  List<List<Integer>> blist=new ArrayList<List<Integer>>();

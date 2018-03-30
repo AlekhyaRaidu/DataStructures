@@ -1,13 +1,11 @@
 package Strings;
 
-import java.util.HashSet;
-import java.util.Set;
 
 public class ReverseCharInEachWord {
-
+	  StringBuilder sb;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String s="This is Code a Code";
+		String s="  This     a               got  ";
 		ReverseCharInEachWord r=new ReverseCharInEachWord();
 		s=r.reverseWords(s);
 		System.out.print(s);
@@ -15,36 +13,38 @@ public class ReverseCharInEachWord {
 
 	}
 	public String reverseWords(String s) {
-		s=s.trim();
-       StringBuilder sb=new StringBuilder();
-       Set<String> set=new HashSet<String>();
-       for(int i=0;i<s.length();i++)
-       {
-    	   sb.append(s.charAt(i));
-       }
-     
-       System.out.print(sb);
-    
-int start=0,end=0;
-       for(int i=0;i<sb.length();i++)
-       {
-    	   if(sb.charAt(i)==' ' || sb.charAt(i)==',' || i==sb.length()-1)
-    	   {
-    		   if(i==sb.length()-1) end++;
-    		   System.out.println(start+" "+end+" "+sb.substring(start,end));
-    		   if(set.contains(sb.substring(start,end)))
-    		   {
-    			   System.out.println("ki");
-    			   sb.delete(start, end);
-    		   }
-    		   else set.add(sb.substring(start,end));
-    		   start=i+1;
-    	   }
-    	  
+		
+        sb=new StringBuilder(s.trim());   
+      reverse(0,sb.length()-1);
+      System.out.println(sb);
+      int start=0,end=0;
+      for(int i=0;i<sb.length();i++)
+      {
+    	 
+    	  if(sb.charAt(i)==' ' || i==sb.length()-1)
+    	  {
+    		  System.out.println(start+" "+end+" "+i+" "+sb.charAt(start)+" "+sb.charAt(end));
+    		  if(start==end && sb.charAt(start)==' ') { System.out.println("here"+start); sb.deleteCharAt(start); i--; end--;}
+    		  else if(sb.charAt(i)==' ') 
+    			 reverse(start,end-1);
+    		  else 
+    			 reverse(start,end);
+    		 start=i+1;
+    	  }
     	   end++;
-       }
+      }
        return sb.toString();
 	}
-	
+	public  void reverse(int start,int end) {
+		char temp;
+		while(start<end)
+		{
+			temp=sb.charAt(start);
+			sb.setCharAt(start, sb.charAt(end));
+			sb.setCharAt(end, temp);
+			start++;  end--;
+		}
+		return;
+	}
 
 }
